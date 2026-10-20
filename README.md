@@ -115,4 +115,4 @@ Deployment order: backend with environment variables; frontend pointed to the re
 See [Vercel monorepos](https://vercel.com/docs/monorepos), [environment variables](https://vercel.com/docs/environment-variables), and [Atlas IP access lists](https://www.mongodb.com/docs/atlas/security/ip-access-list/).
 
 ## Completion notes
-Verified locally: frontend production build, backend production build, and 51 API checks. Browser review and live deployment status will be updated after verification. Submission identity and full screen/camera recording remain the student's responsibility.
+Verified locally: frontend production build, backend production build, and 51 API checks. Browser-reviewed student search/detail, login/logout, and teacher roster/editing screens. Live deployment verification is pending. Submission identity and full screen/camera recording remain the student's responsibility.
