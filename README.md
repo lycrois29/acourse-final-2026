@@ -3,8 +3,8 @@
 Next.js API + React (Vite) frontend + MongoDB. Continued from [the provided starter](https://github.com/pop2518hotmailcom/wad-final-2026-01), preserving both application folders and the original API paths.
 
 ## Student information
-- Student name: to be completed by the submitting student
-- Student ID: to be completed by the submitting student
+- Student name: Thwe Hnin Eain
+- Student ID: 6736673
 
 ## Submission links
 - Repository: https://github.com/lycrois29/acourse-final-2026
@@ -12,7 +12,6 @@ Next.js API + React (Vite) frontend + MongoDB. Continued from [the provided star
 - Frontend source: https://github.com/lycrois29/acourse-final-2026/tree/main/react-frontend
 - Backend deployment: https://acourse-api-lyco.vercel.app
 - Frontend deployment: https://acourse-web-lyco.vercel.app
-- Screen/camera recording: the student must supply their own recording link. No recording was created by this project.
 
 The repository is public; both source folders are accessible without signing in.
 
