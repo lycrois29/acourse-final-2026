@@ -1,39 +1,10 @@
-import { NextResponse } from "next/server";
-import { verifyJWT } from "./lib/auth";
-import corsHeaders from "./lib/cors";
-import {
-  X_HEADER_USER_EMAIL,
-  X_HEADER_USER_ID,
-  X_HEADER_USER_NAME,
-} from "./lib/constant";
-
+import { NextResponse } from 'next/server';
+import { verifyJWT } from './lib/auth';
+import corsHeaders from './lib/cors';
 export function proxy(request) {
-  const user = verifyJWT(request);
-
-  if (!user) {
-    return NextResponse.json(
-      {
-        message: "Unauthorized Request",
-      },
-      {
-        status: 401,
-        headers: corsHeaders,
-      },
-    );
-  }
-
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set(X_HEADER_USER_ID, user.id);
-  requestHeaders.set(X_HEADER_USER_EMAIL, user.email);
-  requestHeaders.set(X_HEADER_USER_NAME, user.username);
-
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+  if (request.method === 'OPTIONS') return new NextResponse(null, { status: 204, headers: corsHeaders });
+  if (request.nextUrl.pathname === '/api/auth/login') return NextResponse.next();
+  if (!verifyJWT(request)) return NextResponse.json({ message: 'Please sign in to continue' }, { status: 401, headers: corsHeaders });
+  return NextResponse.next();
 }
-
-export const config = {
-  matcher: [],
-};
+export const config = { matcher: ['/api/:path*'] };

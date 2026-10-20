@@ -1,25 +1,14 @@
-// src/lib/mongodb.js
-
-import { MongoClient } from "mongodb";
-
-const options = {};
-let globalClientPromise;
-
+import { MongoClient } from 'mongodb';
 export function getClientPromise() {
-  const uri = process.env.MONGODB_URI;
-  if (!uri) {
-    throw new Error(
-      "Please add your Mongo URI to .env.local or set MONGODB_URI env variable",
-    );
+  if (!process.env.MONGODB_URI) throw new Error('MONGODB_URI is required');
+  if (!globalThis.courseMongo) {
+    globalThis.courseMongo = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 5000 }).connect().catch(error => {
+      globalThis.courseMongo = undefined;
+      throw error;
+    });
   }
-  if (process.env.NODE_ENV === "development") {
-    if (!globalClientPromise) {
-      const client = new MongoClient(uri, options);
-      globalClientPromise = client.connect();
-    }
-    return globalClientPromise;
-  } else {
-    const client = new MongoClient(uri, options);
-    return client.connect();
-  }
+  return globalThis.courseMongo;
+}
+export async function database() {
+  return (await getClientPromise()).db(process.env.MONGODB_DB || 'course_service');
 }
