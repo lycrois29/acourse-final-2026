@@ -10,8 +10,8 @@ Next.js API + React (Vite) frontend + MongoDB. Continued from [the provided star
 - Repository: https://github.com/lycrois29/acourse-final-2026
 - Backend source: https://github.com/lycrois29/acourse-final-2026/tree/main/next-backend
 - Frontend source: https://github.com/lycrois29/acourse-final-2026/tree/main/react-frontend
-- Backend deployment: pending deployment verification
-- Frontend deployment: pending deployment verification
+- Backend deployment: https://acourse-api-lyco.vercel.app
+- Frontend deployment: https://acourse-web-lyco.vercel.app
 - Screen/camera recording: the student must supply their own recording link. No recording was created by this project.
 
 The repository is private. Grant the examiner access or change visibility deliberately before submission.
@@ -115,4 +115,4 @@ Deployment order: backend with environment variables; frontend pointed to the re
 See [Vercel monorepos](https://vercel.com/docs/monorepos), [environment variables](https://vercel.com/docs/environment-variables), and [Atlas IP access lists](https://www.mongodb.com/docs/atlas/security/ip-access-list/).
 
 ## Completion notes
-Verified locally: frontend production build, backend production build, and 51 API checks. Browser-reviewed student search/detail, login/logout, and teacher roster/editing screens. Live deployment verification is pending. Submission identity and full screen/camera recording remain the student's responsibility.
+Verified: both production builds; 51 local API checks including concurrent enrollment; 31 live API smoke checks across all six accounts; live browser login and course catalog. Browser-reviewed local student search/detail, login/logout, and teacher roster/editing screens. Both Vercel deployments are Ready and the frontend successfully communicates with the backend. Submission identity and full screen/camera recording remain the student's responsibility.
