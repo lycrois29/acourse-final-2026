@@ -14,7 +14,7 @@ Next.js API + React (Vite) frontend + MongoDB. Continued from [the provided star
 - Frontend deployment: https://acourse-web-lyco.vercel.app
 - Screen/camera recording: the student must supply their own recording link. No recording was created by this project.
 
-The repository is private. Grant the examiner access or change visibility deliberately before submission.
+The repository is public; both source folders are accessible without signing in.
 
 ## Test accounts
 All six accounts use password `LearnTogether!2026`. Run the seed script first.
